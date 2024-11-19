@@ -6,7 +6,7 @@
 
 ## Step 1: Clone the repository
 
-Clone the repository from GitHub:
+Clone the repository custom-java-columnar-db from GitHub:
 
 ```bash
 git clone https://github.com/hawardjie/custom-java-columnar-db.git
