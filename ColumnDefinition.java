@@ -1,4 +1,6 @@
-public class ColumnDefinition {
+import java.io.Serializable;
+
+public class ColumnDefinition implements Serializable {
   private String name;
   private Class<?> type;
   
