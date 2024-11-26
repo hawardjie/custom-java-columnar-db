@@ -28,3 +28,56 @@ After compilation, you can run your program using java command. You need to set 
 ```java
 java -cp ../bin Main
 ```
+
+## Examples:
+
+Create a database
+
+```
+POST http://localhost:8080/api/databases?dbName=investmentDB
+```
+
+Create a table
+
+```
+POST http://localhost:8080/api/databases/investmentDB/tables?tableName=investors
+Content-Type: application/json
+Body:
+[
+    {"name": "investorId", "type": "java.lang.String"},
+    {"name": "firstName", "type": "java.lang.String"},
+    {"name": "lastName", "type": "java.lang.String"},
+    {"name": "email", "type": "java.lang.String"},
+    {"name": "status", "type": "java.lang.String"},
+    {"name": "createdAt", "type": "java.time.LocalDateTime"}
+]
+```
+
+Insert a new record
+
+```
+POST http://localhost:8080/api/databases/investmentDB/tables/investors/records
+Content-Type: application/json
+Body:
+{
+    "investorId": "some-uuid",
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "john.doe@example.com",
+    "status": "Active",
+    "createdAt": "2024-11-26T12:00:00"
+}
+```
+
+Get the record
+
+```
+GET http://localhost:8080/api/databases/investmentDB/tables/investors/records?columns=firstName,email
+Response:
+[
+    {
+        "firstName": "John",
+        "email": "john.doe@example.com"
+    }
+]
+```
