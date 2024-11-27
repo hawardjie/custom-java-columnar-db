@@ -61,9 +61,9 @@ Content-Type: application/json
 Body:
 {
     "investorId": "some-uuid",
-    "firstName": "John",
-    "lastName": "Doe",
-    "email": "john.doe@example.com",
+    "firstName": "Haward",
+    "lastName": "Jie",
+    "email": "haward.jie@columnardb.com",
     "status": "Active",
     "createdAt": "2024-11-26T12:00:00"
 }
@@ -76,8 +76,8 @@ GET http://localhost:8080/api/databases/investmentDB/tables/investors/records?co
 Response:
 [
     {
-        "firstName": "John",
-        "email": "john.doe@example.com"
+        "firstName": "Haward",
+        "email": "haward.jie@columnardb.com"
     }
 ]
 ```
